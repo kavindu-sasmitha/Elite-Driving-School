@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+
+<AnchorPane fx:id="ancPage1" prefHeight="934.0" prefWidth="1360.0" style="-fx-background-color: #f8f9fa;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.lk.ijse.controller.DashBoardController">
+    <children>
+        <!-- Header Bar -->
+        <Rectangle arcHeight="0.0" arcWidth="0.0" height="80.0" width="1360.0"
+                   fill="#2c3e50"
+                   strokeType="INSIDE" strokeWidth="0.0">
+            <effect>
+                <DropShadow blurType="GAUSSIAN" color="rgba(0,0,0,0.1)" height="3.0" radius="3.0" width="0.0" />
+            </effect>
+        </Rectangle>
+
+        <!-- System Title -->
+        <Label layoutX="220.0" layoutY="25.0" text="Learning Management System" style="-fx-text-fill: white;">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+
+        <!-- Date and Time Display -->
+        <Label fx:id="lbDateTime" layoutX="1000.0" layoutY="30.0" prefHeight="25.0" prefWidth="300.0"
+               style="-fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;"
+               textAlignment="RIGHT" />
+
+        <!-- Left Navigation Panel -->
+        <VBox layoutX="0.0" layoutY="80.0" prefWidth="200.0" prefHeight="854.0"
+              style="-fx-background-color: #34495e;"
+              spacing="0.0">
+            <padding>
+                <Insets top="20.0" />
+            </padding>
+
+            <children>
+                <!-- User Info Section -->
+                <VBox alignment="TOP_CENTER" spacing="10.0" style="-fx-padding: 0 0 20 0;">
+                    <children>
+                        <Label text="👤" style="-fx-font-size: 30;" />
+                        <Label fx:id="lbTime" style="-fx-text-fill: #ecf0f1; -fx-font-size: 12px;" />
+                    </children>
+                </VBox>
+
+                <Separator style="-fx-background-color: #4a6278;" />
+
+                <!-- Navigation Menu -->
+                <VBox alignment="TOP_CENTER" prefWidth="200.0" spacing="2.0" style="-fx-padding: 20 0 0 0;">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#btnDashBoardOnAction"
+                                prefHeight="45.0" prefWidth="180.0"
+                                style="-fx-background-color: #1abc9c; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 4; -fx-cursor: hand;"
+                                text="Dashboard" />
+
+                        <Button mnemonicParsing="false" onAction="#btnStudentOnAction"
+                                prefHeight="45.0" prefWidth="180.0"
+                                style="-fx-background-color: transparent; -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 4; -fx-cursor: hand; -fx-border-color: transparent;"
+                                text="Students" />
+
+                        <Button mnemonicParsing="false" onAction="#btnEnrollCourseOnAction"
+                                prefHeight="45.0" prefWidth="180.0"
+                                style="-fx-background-color: transparent; -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 4; -fx-cursor: hand; -fx-border-color: transparent;"
+                                text="Enroll Course" />
+
+                        <Button mnemonicParsing="false" onAction="#btnCourseOnAction"
+                                prefHeight="45.0" prefWidth="180.0"
+                                style="-fx-background-color: transparent; -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 4; -fx-cursor: hand; -fx-border-color: transparent;"
+                                text="Courses" />
+
+                        <Button mnemonicParsing="false" onAction="#btnLessonOnAction"
+                                prefHeight="45.0" prefWidth="180.0"
+                                style="-fx-background-color: transparent; -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 4; -fx-cursor: hand; -fx-border-color: transparent;"
+                                text="Lessons" />
+
+                        <Button mnemonicParsing="false" onAction="#btnInstructorOnAction"
+                                prefHeight="45.0" prefWidth="180.0"
+                                style="-fx-background-color: transparent; -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 4; -fx-cursor: hand; -fx-border-color: transparent;"
+                                text="Instructors" />
+
+                        <Button mnemonicParsing="false" onAction="#btnPaymentDetailsOnAction"
+                                prefHeight="45.0" prefWidth="180.0"
+                                style="-fx-background-color: transparent; -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 4; -fx-cursor: hand; -fx-border-color: transparent;"
+                                text="Payments" />
+
+                        <Button mnemonicParsing="false" onAction="#btnCourseDetailsOnAction"
+                                prefHeight="45.0" prefWidth="180.0"
+                                style="-fx-background-color: transparent; -fx-text-fill: #ecf0f1; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 4; -fx-cursor: hand; -fx-border-color: transparent;"
+                                text="Course Details" />
+                    </children>
+                </VBox>
+
+                <!-- Spacer to push logout to bottom -->
+                <VBox VBox.vgrow="ALWAYS" />
+
+                <Separator style="-fx-background-color: #4a6278;" />
+
+                <!-- Logout Button -->
+                <Button alignment="CENTER" mnemonicParsing="false" onAction="#btnLogOutOnAction"
+                        prefHeight="45.0" prefWidth="180.0"
+                        style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 14px; -fx-background-radius: 4; -fx-cursor: hand;"
+                        text="Logout">
+                    <VBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                    </VBox.margin>
+                </Button>
+            </children>
+        </VBox>
+
+        <!-- Main Content Area -->
+        <AnchorPane fx:id="ancMainContainer" layoutX="200.0" layoutY="80.0" prefHeight="854.0" prefWidth="1160.0"
+                    style="-fx-background-color: #ffffff;" />
+
+        <!-- Welcome Panel in Main Content Area (default view) -->
+        <VBox layoutX="220.0" layoutY="100.0" prefWidth="1120.0" prefHeight="800.0"
+              style="-fx-background-color: #ffffff; -fx-padding: 30;"
+              spacing="20.0">
+            <children>
+                <Label text="Welcome to Learning Management System" style="-fx-text-fill: #2c3e50;">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+
+                <Label text="Manage students, courses, instructors, and more from this dashboard"
+                       style="-fx-text-fill: #7f8c8d; -fx-font-size: 16px;" />
+
+                <!-- Quick Stats Cards -->
+                <HBox spacing="20.0" alignment="TOP_CENTER">
+                    <children>
+                        <!-- Students Card -->
+                        <VBox style="-fx-background-color: #3498db; -fx-background-radius: 8; -fx-padding: 20; -fx-pref-width: 200;"
+                              spacing="10.0">
+                            <Label text="125" style="-fx-text-fill: white; -fx-font-size: 28px; -fx-font-weight: bold;" />
+                            <Label text="Students" style="-fx-text-fill: white; -fx-font-size: 14px;" />
+                        </VBox>
+
+                        <!-- Courses Card -->
+                        <VBox style="-fx-background-color: #2ecc71; -fx-background-radius: 8; -fx-padding: 20; -fx-pref-width: 200;"
+                              spacing="10.0">
+                            <Label text="15" style="-fx-text-fill: white; -fx-font-size: 28px; -fx-font-weight: bold;" />
+                            <Label text="Courses" style="-fx-text-fill: white; -fx-font-size: 14px;" />
+                        </VBox>
+
+                        <!-- Instructors Card -->
+                        <VBox style="-fx-background-color: #e74c3c; -fx-background-radius: 8; -fx-padding: 20; -fx-pref-width: 200;"
+                              spacing="10.0">
+                            <Label text="8" style="-fx-text-fill: white; -fx-font-size: 28px; -fx-font-weight: bold;" />
+                            <Label text="Instructors" style="-fx-text-fill: white; -fx-font-size: 14px;" />
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <!-- Recent Activity Section -->
+                <VBox spacing="10.0" style="-fx-padding: 20 0 0 0;">
+                    <Label text="Recent Activity" style="-fx-text-fill: #2c3e50; -fx-font-size: 18px; -fx-font-weight: bold;" />
+                    <VBox style="-fx-background-color: #f8f9fa; -fx-background-radius: 5; -fx-padding: 15;" spacing="8.0">
+                        <Label text="• New student registered: John Doe" style="-fx-text-fill: #2c3e50;" />
+                        <Label text="• Course 'Java Programming' updated" style="-fx-text-fill: #2c3e50;" />
+                        <Label text="• Payment received from student ID: S00234" style="-fx-text-fill: #2c3e50;" />
+                    </VBox>
+                </VBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

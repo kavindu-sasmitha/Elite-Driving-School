@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #f8f9fa;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.lk.ijse.controller.CourseEnrollController">
+    <children>
+        <!-- Header Section -->
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2c3e50" height="100.0" stroke="#34495e" strokeType="INSIDE" strokeWidth="0.0" width="1200.0">
+            <effect>
+                <DropShadow blurType="GAUSSIAN" color="rgba(0,0,0,0.2)" height="5.0" radius="4.5" width="0.0" />
+            </effect>
+        </Rectangle>
+
+        <Label layoutX="450.0" layoutY="25.0" text="COURSE ENROLLMENT" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="28.0" />
+            </font>
+        </Label>
+
+        <!-- Main Content Container -->
+        <VBox layoutX="50.0" layoutY="120.0" prefHeight="600.0" prefWidth="1100.0" spacing="25.0">
+            <children>
+                <!-- Enrollment Form Section -->
+                <VBox prefWidth="1100.0" spacing="20.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e0e0e0; -fx-padding: 25;">
+                    <children>
+                        <Label style="-fx-text-fill: #2c3e50; -fx-font-weight: bold; -fx-font-size: 20px;" text="New Enrollment">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+
+                        <!-- Student Selection -->
+                        <HBox alignment="CENTER_LEFT" spacing="20.0">
+                            <children>
+                                <VBox prefWidth="350.0" spacing="5.0">
+                                    <Label style="-fx-text-fill: #34495e; -fx-font-weight: bold;" text="Student ID *">
+                                        <font>
+                                            <Font size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                        <TextField prefHeight="35.0" prefWidth="200.0" promptText="Enter Student ID" style="-fx-background-radius: 4; -fx-border-radius: 4; -fx-border-color: #dce1e6; -fx-padding: 0 10;" />
+                                        <Button prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand; -fx-padding: 8 15;" text="Find Student" />
+                                    </HBox>
+                                </VBox>
+
+                                <VBox prefWidth="350.0" spacing="5.0">
+                                    <Label style="-fx-text-fill: #34495e; -fx-font-weight: bold;" text="Student Name">
+                                        <font>
+                                            <Font size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <TextField editable="false" prefHeight="35.0" prefWidth="350.0" style="-fx-background-color: #f8f9fa; -fx-background-radius: 4; -fx-border-radius: 4; -fx-border-color: #dce1e6; -fx-padding: 0 10;" />
+                                </VBox>
+                            </children>
+                        </HBox>
+
+                        <!-- Course Selection -->
+                        <HBox alignment="CENTER_LEFT" spacing="20.0">
+                            <children>
+                                <VBox prefWidth="350.0" spacing="5.0">
+                                    <Label style="-fx-text-fill: #34495e; -fx-font-weight: bold;" text="Select Course *">
+                                        <font>
+                                            <Font size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <ComboBox prefHeight="35.0" prefWidth="350.0" style="-fx-background-radius: 4; -fx-border-radius: 4; -fx-border-color: #dce1e6;" />
+                                </VBox>
+
+                                <VBox prefWidth="350.0" spacing="5.0">
+                                    <Label style="-fx-text-fill: #34495e; -fx-font-weight: bold;" text="Course Fee">
+                                        <font>
+                                            <Font size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <TextField editable="false" prefHeight="35.0" prefWidth="350.0" style="-fx-background-color: #f8f9fa; -fx-background-radius: 4; -fx-border-radius: 4; -fx-border-color: #dce1e6; -fx-padding: 0 10;" />
+                                </VBox>
+                            </children>
+                        </HBox>
+
+                        <!-- Enrollment Details -->
+                        <HBox alignment="CENTER_LEFT" spacing="20.0">
+                            <children>
+                                <VBox prefWidth="250.0" spacing="5.0">
+                                    <Label style="-fx-text-fill: #34495e; -fx-font-weight: bold;" text="Enrollment Date *">
+                                        <font>
+                                            <Font size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <DatePicker prefHeight="35.0" prefWidth="250.0" style="-fx-background-radius: 4; -fx-border-radius: 4; -fx-border-color: #dce1e6;" />
+                                </VBox>
+
+                                <VBox prefWidth="250.0" spacing="5.0">
+                                    <Label style="-fx-text-fill: #34495e; -fx-font-weight: bold;" text="Start Date">
+                                        <font>
+                                            <Font size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <TextField editable="false" prefHeight="35.0" prefWidth="250.0" style="-fx-background-color: #f8f9fa; -fx-background-radius: 4; -fx-border-radius: 4; -fx-border-color: #dce1e6; -fx-padding: 0 10;" />
+                                </VBox>
+
+                                <VBox prefWidth="250.0" spacing="5.0">
+                                    <Label style="-fx-text-fill: #34495e; -fx-font-weight: bold;" text="End Date">
+                                        <font>
+                                            <Font size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <TextField editable="false" prefHeight="35.0" prefWidth="250.0" style="-fx-background-color: #f8f9fa; -fx-background-radius: 4; -fx-border-radius: 4; -fx-border-color: #dce1e6; -fx-padding: 0 10;" />
+                                </VBox>
+                            </children>
+                        </HBox>
+
+                        <!-- Payment Information -->
+                        <VBox prefWidth="1100.0" spacing="5.0">
+                            <Label style="-fx-text-fill: #34495e; -fx-font-weight: bold;" text="Payment Information">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Label>
+                            <HBox alignment="CENTER_LEFT" spacing="20.0">
+                                <children>
+                                    <VBox prefWidth="250.0" spacing="5.0">
+                                        <Label style="-fx-text-fill: #34495e; -fx-font-weight: bold;" text="Payment Method *">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <ComboBox prefHeight="35.0" prefWidth="250.0" style="-fx-background-radius: 4; -fx-border-radius: 4; -fx-border-color: #dce1e6;">
+                                            <items>
+                                                <!-- Would be populated dynamically -->
+                                            </items>
+                                        </ComboBox>
+                                    </VBox>
+
+                                    <VBox prefWidth="250.0" spacing="5.0">
+                                        <Label style="-fx-text-fill: #34495e; -fx-font-weight: bold;" text="Amount Paid (LKR) *">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField prefHeight="35.0" prefWidth="250.0" promptText="0.00" style="-fx-background-radius: 4; -fx-border-radius: 4; -fx-border-color: #dce1e6; -fx-padding: 0 10;" />
+                                    </VBox>
+
+                                    <VBox prefWidth="250.0" spacing="5.0">
+                                        <Label style="-fx-text-fill: #34495e; -fx-font-weight: bold;" text="Balance">
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField editable="false" prefHeight="35.0" prefWidth="250.0" style="-fx-background-color: #f8f9fa; -fx-background-radius: 4; -fx-border-radius: 4; -fx-border-color: #dce1e6; -fx-padding: 0 10;" />
+                                    </VBox>
+                                </children>
+                            </HBox>
+                        </VBox>
+
+                        <!-- Notes -->
+                        <VBox prefWidth="1100.0" spacing="5.0">
+                            <Label style="-fx-text-fill: #34495e; -fx-font-weight: bold;" text="Additional Notes">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Label>
+                            <TextArea prefHeight="80.0" prefWidth="1100.0" promptText="Enter any additional notes or special requirements..." style="-fx-background-radius: 4; -fx-border-radius: 4; -fx-border-color: #dce1e6; -fx-padding: 10;" />
+                        </VBox>
+
+                        <!-- Action Buttons -->
+                        <HBox alignment="CENTER" spacing="20.0" style="-fx-padding: 15 0 0 0;">
+                            <children>
+                                <Button prefHeight="45.0" prefWidth="150.0" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand; -fx-padding: 12 25;" text="Enroll Now">
+                                    <effect>
+                                        <DropShadow blurType="GAUSSIAN" color="rgba(0,0,0,0.1)" height="3.0" radius="3.0" width="0.0" />
+                                    </effect>
+                                </Button>
+                                <Button prefHeight="45.0" prefWidth="150.0" style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand; -fx-padding: 12 25;" text="Clear Form">
+                                    <effect>
+                                        <DropShadow blurType="GAUSSIAN" color="rgba(0,0,0,0.1)" height="3.0" radius="3.0" width="0.0" />
+                                    </effect>
+                                </Button>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <!-- Current Enrollments Table -->
+                <VBox prefWidth="1100.0" spacing="10.0">
+                    <Label style="-fx-text-fill: #2c3e50; -fx-font-weight: bold; -fx-font-size: 18px;" text="Current Enrollments">
+                        <font>
+                            <Font name="System Bold" size="18.0" />
+                        </font>
+                    </Label>
+
+                    <TableView prefHeight="250.0" prefWidth="1100.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #bdc3c7;">
+                        <columns>
+                            <TableColumn prefWidth="100.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="Enroll ID">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="enrollId" />
+                                </cellValueFactory>
+                                <graphic>
+                                    <Label text="Enroll ID" textFill="WHITE" />
+                                </graphic>
+                            </TableColumn>
+                            <TableColumn prefWidth="150.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="Student ID">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="studentId" />
+                                </cellValueFactory>
+                                <graphic>
+                                    <Label text="Student ID" textFill="WHITE" />
+                                </graphic>
+                            </TableColumn>
+                            <TableColumn prefWidth="200.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="Student Name">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="studentName" />
+                                </cellValueFactory>
+                                <graphic>
+                                    <Label text="Student Name" textFill="WHITE" />
+                                </graphic>
+                            </TableColumn>
+                            <TableColumn prefWidth="200.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="Course">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="course" />
+                                </cellValueFactory>
+                                <graphic>
+                                    <Label text="Course" textFill="WHITE" />
+                                </graphic>
+                            </TableColumn>
+                            <TableColumn prefWidth="120.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="Enroll Date">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="enrollDate" />
+                                </cellValueFactory>
+                                <graphic>
+                                    <Label text="Enroll Date" textFill="WHITE" />
+                                </graphic>
+                            </TableColumn>
+                            <TableColumn prefWidth="120.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="Status">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="status" />
+                                </cellValueFactory>
+                                <graphic>
+                                    <Label text="Status" textFill="WHITE" />
+                                </graphic>
+                            </TableColumn>
+                            <TableColumn prefWidth="150.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="Actions">
+                                <graphic>
+                                    <Label text="Actions" textFill="WHITE" />
+                                </graphic>
+                            </TableColumn>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </children>
+        </VBox>
+
+        <!-- Status Bar -->
+        <HBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="750.0" prefHeight="50.0" prefWidth="1200.0" style="-fx-background-color: #34495e; -fx-padding: 0 20;">
+            <children>
+                <Label text="Status: Ready for enrollment" textFill="WHITE">
+                    <font>
+                        <Font name="System" size="12.0" />
+                    </font>
+                </Label>
+                <Label text="Total Enrollments: 45" textAlignment="RIGHT" textFill="WHITE" HBox.hgrow="ALWAYS">
+                    <font>
+                        <Font name="System" size="12.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets right="20.0" />
+                    </HBox.margin>
+                </Label>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #f8f9fa;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.lk.ijse.controller.LessonController">
+    <children>
+        <!-- Header Section -->
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2c3e50" height="100.0" stroke="#34495e" strokeType="INSIDE" strokeWidth="0.0" width="1200.0">
+            <effect>
+                <DropShadow blurType="GAUSSIAN" color="rgba(0,0,0,0.2)" height="5.0" radius="4.5" width="0.0" />
+            </effect>
+        </Rectangle>
+
+        <Label layoutX="450.0" layoutY="25.0" text="LESSON MANAGEMENT" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="28.0" />
+            </font>
+        </Label>
+
+        <!-- Main Content Container -->
+        <VBox layoutX="50.0" layoutY="120.0" prefHeight="600.0" prefWidth="1100.0" spacing="25.0">
+            <children>
+                <!-- Form Section -->
+                <VBox prefWidth="1100.0" spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e0e0e0; -fx-padding: 20;">
+                    <children>
+                        <Label style="-fx-text-fill: #2c3e50; -fx-font-weight: bold; -fx-font-size: 18px;" text="Lesson Details">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+
+                        <!-- Form Fields -->
+                        <HBox alignment="CENTER_LEFT" spacing="20.0">
+                            <children>
+                                <!-- Lesson ID -->
+                                <VBox prefWidth="250.0" spacing="5.0">
+                                    <Label style="-fx-text-fill: #34495e; -fx-font-weight: bold;" text="Lesson ID *">
+                                        <font>
+                                            <Font size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <TextField fx:id="txtId" prefHeight="35.0" prefWidth="250.0" promptText="Enter Lesson ID" style="-fx-background-radius: 4; -fx-border-radius: 4; -fx-border-color: #dce1e6; -fx-padding: 0 10;" />
+                                </VBox>
+
+                                <!-- Duration -->
+                                <VBox prefWidth="250.0" spacing="5.0">
+                                    <Label style="-fx-text-fill: #34495e; -fx-font-weight: bold;" text="Duration (minutes) *">
+                                        <font>
+                                            <Font size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <TextField fx:id="txtDuration" prefHeight="35.0" prefWidth="250.0" promptText="Enter duration in minutes" style="-fx-background-radius: 4; -fx-border-radius: 4; -fx-border-color: #dce1e6; -fx-padding: 0 10;" />
+                                </VBox>
+
+                                <!-- Start Time -->
+                                <VBox prefWidth="250.0" spacing="5.0">
+                                    <Label style="-fx-text-fill: #34495e; -fx-font-weight: bold;" text="Start Time *">
+                                        <font>
+                                            <Font size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <TextField fx:id="txtStartTime" prefHeight="35.0" prefWidth="250.0" promptText="HH:MM (24-hour format)" style="-fx-background-radius: 4; -fx-border-radius: 4; -fx-border-color: #dce1e6; -fx-padding: 0 10;" />
+                                </VBox>
+                            </children>
+                        </HBox>
+
+                        <!-- Additional Fields -->
+                        <HBox alignment="CENTER_LEFT" spacing="20.0">
+                            <children>
+                                <!-- Course Selection -->
+                                <VBox prefWidth="250.0" spacing="5.0">
+                                    <Label style="-fx-text-fill: #34495e; -fx-font-weight: bold;" text="Course *">
+                                        <font>
+                                            <Font size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <ComboBox fx:id="cmbCourse" prefHeight="35.0" prefWidth="250.0" style="-fx-background-radius: 4; -fx-border-radius: 4; -fx-border-color: #dce1e6;" />
+                                </VBox>
+
+                                <!-- Instructor -->
+                                <VBox prefWidth="250.0" spacing="5.0">
+                                    <Label style="-fx-text-fill: #34495e; -fx-font-weight: bold;" text="Instructor *">
+                                        <font>
+                                            <Font size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <ComboBox fx:id="cmbInstructor" prefHeight="35.0" prefWidth="250.0" style="-fx-background-radius: 4; -fx-border-radius: 4; -fx-border-color: #dce1e6;" />
+                                </VBox>
+
+                                <!-- Date -->
+                                <VBox prefWidth="250.0" spacing="5.0">
+                                    <Label style="-fx-text-fill: #34495e; -fx-font-weight: bold;" text="Date *">
+                                        <font>
+                                            <Font size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <DatePicker fx:id="DatePiker" prefHeight="35.0" prefWidth="250.0" style="-fx-background-radius: 4; -fx-border-radius: 4; -fx-border-color: #dce1e6;" />
+                                </VBox>
+                            </children>
+                        </HBox>
+
+                        <!-- Action Buttons -->
+                        <HBox alignment="CENTER" spacing="15.0" style="-fx-padding: 10 0 0 0;">
+                            <children>
+                                <Button fx:id="btnAdd" onAction="#btnSaveOnAction" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand; -fx-padding: 10 20;" text="Add">
+                                    <effect>
+                                        <DropShadow blurType="GAUSSIAN" color="rgba(0,0,0,0.1)" height="2.0" radius="2.0" width="0.0" />
+                                    </effect>
+                                </Button>
+                                <Button fx:id="btnUpdate" onAction="#btnUpdateOnAction" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand; -fx-padding: 10 20;" text="Update">
+                                    <effect>
+                                        <DropShadow blurType="GAUSSIAN" color="rgba(0,0,0,0.1)" height="2.0" radius="2.0" width="0.0" />
+                                    </effect>
+                                </Button>
+                                <Button fx:id="btnDelete" onAction="#btnDeleteOnAction" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand; -fx-padding: 10 20;" text="Delete">
+                                    <effect>
+                                        <DropShadow blurType="GAUSSIAN" color="rgba(0,0,0,0.1)" height="2.0" radius="2.0" width="0.0" />
+                                    </effect>
+                                </Button>
+                                <Button fx:id="btnReset" onAction="#btnResetOnAction" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand; -fx-padding: 10 20;" text="Reset">
+                                    <effect>
+                                        <DropShadow blurType="GAUSSIAN" color="rgba(0,0,0,0.1)" height="2.0" radius="2.0" width="0.0" />
+                                    </effect>
+                                </Button>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <!-- Lessons Table -->
+                <VBox prefWidth="1100.0" spacing="10.0">
+                    <Label style="-fx-text-fill: #2c3e50; -fx-font-weight: bold; -fx-font-size: 18px;" text="Scheduled Lessons">
+                        <font>
+                            <Font name="System Bold" size="18.0" />
+                        </font>
+                    </Label>
+
+                    <TableView fx:id="tblLesson" prefHeight="300.0" prefWidth="1100.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #bdc3c7;">
+                        <columns>
+                            <TableColumn fx:id="colID" prefWidth="100.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="Lesson ID">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="lessonId" />
+                                </cellValueFactory>
+                                <graphic>
+                                    <Label textFill="WHITE" />
+                                </graphic>
+                            </TableColumn>
+                            <TableColumn fx:id="colCourse" prefWidth="200.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="Course">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="course" />
+                                </cellValueFactory>
+                                <graphic>
+                                    <Label textFill="WHITE" />
+                                </graphic>
+                            </TableColumn>
+                            <TableColumn fx:id="colInstructor" prefWidth="150.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="Instructor">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="instructor" />
+                                </cellValueFactory>
+                                <graphic>
+                                    <Label textFill="WHITE" />
+                                </graphic>
+                            </TableColumn>
+                            <TableColumn fx:id="colDate" prefWidth="120.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="Date">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="date" />
+                                </cellValueFactory>
+                                <graphic>
+                                    <Label textFill="WHITE" />
+                                </graphic>
+                            </TableColumn>
+                            <TableColumn fx:id="colStartTime" prefWidth="120.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="Start Time">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="startTime" />
+                                </cellValueFactory>
+                                <graphic>
+                                    <Label textFill="WHITE" />
+                                </graphic>
+                            </TableColumn>
+                            <TableColumn fx:id="colDuration" prefWidth="120.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="Duration">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="duration" />
+                                </cellValueFactory>
+                                <graphic>
+                                    <Label textFill="WHITE" />
+                                </graphic>
+                            </TableColumn>
+                            <TableColumn fx:id="colAction" prefWidth="150.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="Actions">
+                                <graphic>
+                                    <Label textFill="WHITE" />
+                                </graphic>
+                            </TableColumn>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </children>
+        </VBox>
+
+        <!-- Status Bar -->
+        <HBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="750.0" prefHeight="50.0" prefWidth="1200.0" style="-fx-background-color: #34495e; -fx-padding: 0 20;">
+            <children>
+                <Label text="Status: Ready" textFill="WHITE">
+                    <font>
+                        <Font name="System" size="12.0" />
+                    </font>
+                </Label>
+                <Label text="Total Lessons: 12" textAlignment="RIGHT" textFill="WHITE" HBox.hgrow="ALWAYS">
+                    <font>
+                        <Font name="System" size="12.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets right="20.0" />
+                    </HBox.margin>
+                </Label>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

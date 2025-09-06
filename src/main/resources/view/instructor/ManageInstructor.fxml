@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.lk.ijse.controller.ManageInstructorController">
+    <children>
+        <!-- Header Section -->
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2c3e50" height="80.0" stroke="#34495e" strokeType="INSIDE" strokeWidth="0.0" width="1200.0">
+            <effect>
+                <DropShadow blurType="GAUSSIAN" color="rgba(0,0,0,0.3)" height="5.0" radius="4.5" width="0.0" />
+            </effect>
+        </Rectangle>
+
+        <Label layoutX="450.0" layoutY="20.0" text="INSTRUCTOR MANAGEMENT" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="28.0" />
+            </font>
+        </Label>
+
+        <!-- Main Content Container -->
+        <VBox layoutX="50.0" layoutY="100.0" prefHeight="650.0" prefWidth="1100.0" spacing="20.0">
+            <children>
+                <!-- Search Panel -->
+                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="1100.0" spacing="15.0" style="-fx-background-color: #ecf0f1; -fx-background-radius: 5; -fx-padding: 10;">
+                    <children>
+                        <Label text="Search:" textFill="#2c3e50">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <TextField prefHeight="35.0" prefWidth="400.0" promptText="Search by name, specialization or ID" style="-fx-background-radius: 4; -fx-border-color: #bdc3c7; -fx-border-radius: 4; -fx-padding: 0 10;" />
+                        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand;" text="Search" />
+                        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-background-radius: 4; -fx-cursor: hand;" text="Clear" />
+                    </children>
+                </HBox>
+
+                <!-- Form and Table Container -->
+                <HBox prefHeight="500.0" prefWidth="1100.0" spacing="30.0">
+                    <children>
+                        <!-- Instructor Form -->
+                        <VBox prefWidth="400.0" spacing="15.0" style="-fx-background-color: #f8f9fa; -fx-background-radius: 5; -fx-border-color: #e9ecef; -fx-border-radius: 5; -fx-padding: 20;">
+                            <children>
+                                <Label text="Instructor Details" textFill="#2c3e50">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                    <padding>
+                                        <Insets bottom="10.0" />
+                                    </padding>
+                                </Label>
+
+                                <!-- ID Field -->
+                                <VBox spacing="5.0">
+                                    <Label text="Instructor ID *" textFill="#34495e">
+                                        <font>
+                                            <Font name="System Bold" size="12.0" />
+                                        </font>
+                                    </Label>
+                                    <TextField prefHeight="35.0" prefWidth="350.0" promptText="Enter instructor ID" style="-fx-background-radius: 4; -fx-border-color: #bdc3c7; -fx-border-radius: 4; -fx-padding: 0 10;" />
+                                </VBox>
+
+                                <!-- Name Field -->
+                                <VBox spacing="5.0">
+                                    <Label text="Full Name *" textFill="#34495e">
+                                        <font>
+                                            <Font name="System Bold" size="12.0" />
+                                        </font>
+                                    </Label>
+                                    <TextField prefHeight="35.0" prefWidth="350.0" promptText="Enter full name" style="-fx-background-radius: 4; -fx-border-color: #bdc3c7; -fx-border-radius: 4; -fx-padding: 0 10;" />
+                                </VBox>
+
+                                <!-- Specialization Field -->
+                                <VBox spacing="5.0">
+                                    <Label text="Specialization *" textFill="#34495e">
+                                        <font>
+                                            <Font name="System Bold" size="12.0" />
+                                        </font>
+                                    </Label>
+                                    <ComboBox prefHeight="35.0" prefWidth="350.0" style="-fx-background-radius: 4; -fx-border-color: #bdc3c7; -fx-border-radius: 4;" />
+                                </VBox>
+
+                                <!-- Availability Field -->
+                                <VBox spacing="5.0">
+                                    <Label text="Availability *" textFill="#34495e">
+                                        <font>
+                                            <Font name="System Bold" size="12.0" />
+                                        </font>
+                                    </Label>
+                                    <HBox spacing="10.0">
+                                        <CheckBox text="Full-time" />
+                                        <CheckBox text="Part-time" />
+                                        <CheckBox text="Contract" />
+                                    </HBox>
+                                </VBox>
+
+                                <!-- Details Field -->
+                                <VBox spacing="5.0">
+                                    <Label text="Additional Details" textFill="#34495e">
+                                        <font>
+                                            <Font name="System Bold" size="12.0" />
+                                        </font>
+                                    </Label>
+                                    <TextArea prefHeight="80.0" prefWidth="350.0" promptText="Enter additional details about the instructor" style="-fx-background-radius: 4; -fx-border-color: #bdc3c7; -fx-border-radius: 4;" />
+                                </VBox>
+
+                                <!-- Action Buttons -->
+                                <HBox alignment="CENTER" spacing="15.0" style="-fx-padding: 15 0 0 0;">
+                                    <children>
+                                        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand;" text="Add">
+                                            <effect>
+                                                <DropShadow blurType="GAUSSIAN" color="rgba(0,0,0,0.2)" height="3.0" radius="3.0" width="0.0" />
+                                            </effect>
+                                        </Button>
+                                        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand;" text="Update">
+                                            <effect>
+                                                <DropShadow blurType="GAUSSIAN" color="rgba(0,0,0,0.2)" height="3.0" radius="3.0" width="0.0" />
+                                            </effect>
+                                        </Button>
+                                        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand;" text="Delete">
+                                            <effect>
+                                                <DropShadow blurType="GAUSSIAN" color="rgba(0,0,0,0.2)" height="3.0" radius="3.0" width="0.0" />
+                                            </effect>
+                                        </Button>
+                                        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand;" text="Reset">
+                                            <effect>
+                                                <DropShadow blurType="GAUSSIAN" color="rgba(0,0,0,0.2)" height="3.0" radius="3.0" width="0.0" />
+                                            </effect>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+
+                        <!-- Instructor Table -->
+                        <VBox prefWidth="650.0" spacing="10.0">
+                            <children>
+                                <Label text="Instructor Records" textFill="#2c3e50">
+                                    <font>
+                                        <Font name="System Bold" size="16.0" />
+                                    </font>
+                                </Label>
+
+                                <TableView prefHeight="430.0" prefWidth="650.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #bdc3c7;">
+                                    <columns>
+                                        <TableColumn prefWidth="80.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="ID">
+                                            <graphic>
+                                                <Label textFill="WHITE" />
+                                            </graphic>
+                                        </TableColumn>
+                                        <TableColumn prefWidth="120.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="Name">
+                                            <graphic>
+                                                <Label textFill="WHITE" />
+                                            </graphic>
+                                        </TableColumn>
+                                        <TableColumn prefWidth="150.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="Specialization">
+                                            <graphic>
+                                                <Label textFill="WHITE" />
+                                            </graphic>
+                                        </TableColumn>
+                                        <TableColumn prefWidth="100.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="Availability">
+                                            <graphic>
+                                                <Label textFill="WHITE" />
+                                            </graphic>
+                                        </TableColumn>
+                                        <TableColumn prefWidth="200.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="Details">
+                                            <graphic>
+                                                <Label textFill="WHITE" />
+                                            </graphic>
+                                        </TableColumn>
+                                    </columns>
+                                </TableView>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+
+        <!-- Status Bar -->
+        <HBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="750.0" prefHeight="50.0" prefWidth="1200.0" style="-fx-background-color: #34495e; -fx-padding: 0 20;">
+            <children>
+                <Label text="Status: Ready" textFill="WHITE">
+                    <font>
+                        <Font name="System" size="12.0" />
+                    </font>
+                </Label>
+                <Label text="Total Instructors: 25" textAlignment="RIGHT" textFill="WHITE" HBox.hgrow="ALWAYS">
+                    <font>
+                        <Font name="System" size="12.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets right="20.0" />
+                    </HBox.margin>
+                </Label>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

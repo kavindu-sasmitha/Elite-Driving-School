@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #f8f9fa;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.lk.ijse.controller.ManageCourseController">
+    <children>
+        <!-- Header Section -->
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2c3e50" height="100.0" stroke="#34495e" strokeType="INSIDE" strokeWidth="0.0" width="1200.0">
+            <effect>
+                <DropShadow blurType="GAUSSIAN" color="rgba(0,0,0,0.2)" height="5.0" radius="4.5" width="0.0" />
+            </effect>
+        </Rectangle>
+
+        <Label layoutX="450.0" layoutY="25.0" text="DRIVING COURSES" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="32.0" />
+            </font>
+        </Label>
+
+        <!-- Main Content Container -->
+        <VBox layoutX="50.0" layoutY="120.0" prefHeight="600.0" prefWidth="1100.0" spacing="20.0">
+            <children>
+                <!-- Introduction Text -->
+                <Label style="-fx-text-fill: #7f8c8d; -fx-font-size: 16px;" text="Elite Driving School offers comprehensive driving programs for all license types" />
+
+                <!-- Sample Course Cards -->
+                <Label style="-fx-text-fill: #2c3e50; -fx-font-weight: bold; -fx-font-size: 18px;" text="Available Courses:" />
+
+                <HBox alignment="TOP_CENTER" spacing="20">
+                    <children>
+                        <!-- Course Card 1 -->
+                        <VBox spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e0e0e0; -fx-padding: 20; -fx-pref-width: 210;">
+                            <Label style="-fx-text-fill: #3498db; -fx-font-weight: bold;" text="C1001" />
+                            <Label style="-fx-text-fill: #2c3e50; -fx-font-weight: bold; -fx-wrap-text: true;" text="Basic Learner Program" />
+                            <Label style="-fx-text-fill: #7f8c8d;" text="Duration: 12 weeks" />
+                            <Label style="-fx-text-fill: #e74c3c; -fx-font-weight: bold;" text="Fee: LKR 50,000.00" />
+                            <Button prefWidth="170" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand;" text="Enroll Now" />
+                            <Button prefWidth="170" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand;" text="View Lessons" />
+                        </VBox>
+
+                        <!-- Course Card 2 -->
+                        <VBox spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e0e0e0; -fx-padding: 20; -fx-pref-width: 210;">
+                            <Label style="-fx-text-fill: #3498db; -fx-font-weight: bold;" text="C1002" />
+                            <Label style="-fx-text-fill: #2c3e50; -fx-font-weight: bold; -fx-wrap-text: true;" text="Advanced Defensive Driving" />
+                            <Label style="-fx-text-fill: #7f8c8d;" text="Duration: 8 weeks" />
+                            <Label style="-fx-text-fill: #e74c3c; -fx-font-weight: bold;" text="Fee: LKR 65,000.00" />
+                            <Button prefWidth="170" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand;" text="Enroll Now" />
+                            <Button prefWidth="170" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand;" text="View Lessons" />
+                        </VBox>
+
+                        <!-- Course Card 3 -->
+                        <VBox spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e0e0e0; -fx-padding: 20; -fx-pref-width: 210;">
+                            <Label style="-fx-text-fill: #3498db; -fx-font-weight: bold;" text="C1003" />
+                            <Label style="-fx-text-fill: #2c3e50; -fx-font-weight: bold; -fx-wrap-text: true;" text="Motorcycle License Training" />
+                            <Label style="-fx-text-fill: #7f8c8d;" text="Duration: 16 weeks" />
+                            <Label style="-fx-text-fill: #e74c3c; -fx-font-weight: bold;" text="Fee: LKR 75,000.00" />
+                            <Button prefWidth="170" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand;" text="Enroll Now" />
+                            <Button prefWidth="170" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand;" text="View Lessons" />
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <!-- Second Row of Course Cards -->
+                <HBox alignment="TOP_CENTER" spacing="20" style="-fx-padding: 20 0 0 0;">
+                    <children>
+                        <!-- Course Card 4 -->
+                        <VBox spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e0e0e0; -fx-padding: 20; -fx-pref-width: 210;">
+                            <Label style="-fx-text-fill: #3498db; -fx-font-weight: bold;" text="C1004" />
+                            <Label style="-fx-text-fill: #2c3e50; -fx-font-weight: bold; -fx-wrap-text: true;" text="Heavy Vehicle Training" />
+                            <Label style="-fx-text-fill: #7f8c8d;" text="Duration: 6 months" />
+                            <Label style="-fx-text-fill: #e74c3c; -fx-font-weight: bold;" text="Fee: LKR 150,000.00" />
+                            <Button prefWidth="170" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand;" text="Enroll Now" />
+                            <Button prefWidth="170" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand;" text="View Lessons" />
+                        </VBox>
+
+                        <!-- Course Card 5 -->
+                        <VBox spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #e0e0e0; -fx-padding: 20; -fx-pref-width: 210;">
+                            <Label style="-fx-text-fill: #3498db; -fx-font-weight: bold;" text="C1005" />
+                            <Label style="-fx-text-fill: #2c3e50; -fx-font-weight: bold; -fx-wrap-text: true;" text="Refresher Driving Course" />
+                            <Label style="-fx-text-fill: #7f8c8d;" text="Duration: 3 months" />
+                            <Label style="-fx-text-fill: #e74c3c; -fx-font-weight: bold;" text="Fee: LKR 30,000.00" />
+                            <Button prefWidth="170" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand;" text="Enroll Now" />
+                            <Button prefWidth="170" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand;" text="View Lessons" />
+                        </VBox>
+
+                        <!-- Add New Course Card -->
+                        <VBox spacing="15.0" style="-fx-background-color: #ecf0f1; -fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #bdc3c7; -fx-border-style: dashed; -fx-padding: 20; -fx-pref-width: 210; -fx-alignment: CENTER;">
+                            <Label style="-fx-text-fill: #7f8c8d; -fx-font-size: 36;" text="+" />
+                            <Label style="-fx-text-fill: #7f8c8d; -fx-font-weight: bold;" text="Add New Course" />
+                            <Button prefWidth="170" style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand;" text="Create Course" />
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+
+        <!-- Status Bar -->
+        <HBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="750.0" prefHeight="50.0" prefWidth="1200.0" style="-fx-background-color: #34495e; -fx-padding: 0 20;">
+            <children>
+                <Label text="Total Courses: 5" textFill="WHITE">
+                    <font>
+                        <Font name="System" size="12.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>
