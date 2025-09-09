@@ -15,5 +15,14 @@
         <property name="hibernate.hbm2ddl.auto">create</property>
 
         <property name="hibernate.current_session_context_class">thread</property>
+
+        <!--    Mapping files-->
+        <mapping class="edu.icet.elite.entity.User"/>
+        <mapping class="edu.icet.elite.entity.Student"/>
+        <mapping class="edu.icet.elite.entity.Course"/>
+        <mapping class="edu.icet.elite.entity.Instructor"/>
+        <mapping class="edu.icet.elite.entity.Payment"/>
+        <mapping class="edu.icet.elite.entity.Lesson"/>
+
     </session-factory>
 </hibernate-configuration>

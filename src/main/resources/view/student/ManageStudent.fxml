@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.lk.ijse.controller.ManageStudentController">
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.elite.controller.ManageStudentController">
     <children>
         <!-- Header with gradient background -->
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2c3e50" height="100.0" stroke="#34495e" strokeType="INSIDE" strokeWidth="0.0" width="1200.0">
@@ -39,81 +39,36 @@
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <TextField prefHeight="35.0" prefWidth="400.0" promptText="Enter student name, ID or email" style="-fx-background-radius: 4; -fx-border-color: #bdc3c7; -fx-border-radius: 4; -fx-padding: 0 10;" />
-                        <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand;" text="Search" />
+                        <TextField fx:id="txtSearch" prefHeight="35.0" prefWidth="400.0" promptText="Enter student name, ID or email" style="-fx-background-radius: 4; -fx-border-color: #bdc3c7; -fx-border-radius: 4; -fx-padding: 0 10;" />
+                        <Button fx:id="btnSearch" onAction="#btnSearchOnAction" mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand;" text="Search" />
                     </children>
                 </HBox>
 
                 <!-- Table View -->
-                <TableView prefHeight="450.0" prefWidth="1100.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #bdc3c7;">
+                <TableView fx:id="tblStudents" prefHeight="450.0" prefWidth="1100.0" style="-fx-background-radius: 5; -fx-border-radius: 5; -fx-border-color: #bdc3c7;">
                     <columns>
-                        <TableColumn prefWidth="80.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="ID">
-                            <graphic>
-                                <Label textFill="WHITE" />
-                            </graphic>
-                        </TableColumn>
-                        <TableColumn prefWidth="150.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="Name">
-                            <graphic>
-                                <Label textFill="WHITE" />
-                            </graphic>
-                        </TableColumn>
-                        <TableColumn prefWidth="120.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="Date Of Birth">
-                            <graphic>
-                                <Label textFill="WHITE" />
-                            </graphic>
-                        </TableColumn>
-                        <TableColumn prefWidth="200.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="Email">
-                            <graphic>
-                                <Label textFill="WHITE" />
-                            </graphic>
-                        </TableColumn>
-                        <TableColumn prefWidth="120.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="Contact">
-                            <graphic>
-                                <Label textFill="WHITE" />
-                            </graphic>
-                        </TableColumn>
-                        <TableColumn prefWidth="180.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="Address">
-                            <graphic>
-                                <Label textFill="WHITE" />
-                            </graphic>
-                        </TableColumn>
-                        <TableColumn prefWidth="150.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="Registration Date">
-                            <graphic>
-                                <Label textFill="WHITE" />
-                            </graphic>
-                        </TableColumn>
-                        <TableColumn prefWidth="100.0" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;" text="Actions">
-                            <graphic>
-                                <Label textFill="WHITE" />
-                            </graphic>
-                        </TableColumn>
+                        <TableColumn fx:id="colStudentId" prefWidth="80.0" text="ID" />
+                        <TableColumn fx:id="colName" prefWidth="150.0" text="Name" />
+                        <TableColumn fx:id="colAddress" prefWidth="180.0" text="Address" />
+                        <TableColumn fx:id="colContact" prefWidth="120.0" text="Contact" />
+                        <TableColumn fx:id="colRegDate" prefWidth="150.0" text="Registration Date" />
                     </columns>
                 </TableView>
 
                 <!-- Action Buttons -->
                 <HBox alignment="CENTER" prefHeight="60.0" prefWidth="1100.0" spacing="30.0">
                     <children>
-                        <Button fx:id="btnRegister" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand;" text="Register New">
+                        <Button fx:id="btnRegister" onAction="#btnRegisterOnAction" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand;" text="Register New">
                             <effect>
                                 <DropShadow blurType="GAUSSIAN" color="rgba(0,0,0,0.2)" height="3.0" radius="3.0" width="0.0" />
                             </effect>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand;" text="Update">
+                        <Button fx:id="btnUpdate" onAction="#btnUpdateOnAction" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand;" text="Update">
                             <effect>
                                 <DropShadow blurType="GAUSSIAN" color="rgba(0,0,0,0.2)" height="3.0" radius="3.0" width="0.0" />
                             </effect>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand;" text="Delete">
-                            <effect>
-                                <DropShadow blurType="GAUSSIAN" color="rgba(0,0,0,0.2)" height="3.0" radius="3.0" width="0.0" />
-                            </effect>
-                        </Button>
-                        <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand;" text="Reset">
-                            <effect>
-                                <DropShadow blurType="GAUSSIAN" color="rgba(0,0,0,0.2)" height="3.0" radius="3.0" width="0.0" />
-                            </effect>
-                        </Button>
-                        <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand;" text="Export Data">
+                        <Button fx:id="btnDelete" onAction="#btnDeleteOnAction" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4; -fx-cursor: hand;" text="Delete">
                             <effect>
                                 <DropShadow blurType="GAUSSIAN" color="rgba(0,0,0,0.2)" height="3.0" radius="3.0" width="0.0" />
                             </effect>
@@ -126,12 +81,12 @@
         <!-- Status Bar -->
         <HBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="750.0" prefHeight="50.0" prefWidth="1200.0" style="-fx-background-color: #34495e; -fx-padding: 0 20;">
             <children>
-                <Label text="Status: Ready" textFill="WHITE">
+                <Label fx:id="lblStatus" text="Status: Ready" textFill="WHITE">
                     <font>
                         <Font name="System" size="12.0" />
                     </font>
                 </Label>
-                <Label text="Total Students: " textAlignment="RIGHT" textFill="WHITE" HBox.hgrow="ALWAYS">
+                <Label fx:id="lblTotalStudents" text="Total Students: 0" textAlignment="RIGHT" textFill="WHITE" HBox.hgrow="ALWAYS">
                     <font>
                         <Font name="System" size="12.0" />
                     </font>

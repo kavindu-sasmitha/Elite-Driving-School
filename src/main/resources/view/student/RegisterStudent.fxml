@@ -16,7 +16,7 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.ComboBox?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #f8f9fa;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.lk.ijse.controller.RegisterStudentController">
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #f8f9fa;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.elite.controller.RegisterStudentController">
     <children>
         <!-- Header with subtle gradient -->
         <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" width="1000.0"

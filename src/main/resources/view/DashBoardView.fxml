@@ -13,7 +13,7 @@
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
 
-<AnchorPane fx:id="ancPage1" prefHeight="934.0" prefWidth="1360.0" style="-fx-background-color: #f8f9fa;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.lk.ijse.controller.DashBoardController">
+<AnchorPane fx:id="ancPage1" prefHeight="934.0" prefWidth="1360.0" style="-fx-background-color: #f8f9fa;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.icet.elite.controller.DashBoardController">
     <children>
         <!-- Header Bar -->
         <Rectangle arcHeight="0.0" arcWidth="0.0" height="80.0" width="1360.0"
@@ -141,21 +141,21 @@
                         <!-- Students Card -->
                         <VBox style="-fx-background-color: #3498db; -fx-background-radius: 8; -fx-padding: 20; -fx-pref-width: 200;"
                               spacing="10.0">
-                            <Label text="125" style="-fx-text-fill: white; -fx-font-size: 28px; -fx-font-weight: bold;" />
+                            <Label fx:id="lblStudentCount" text="0" style="-fx-text-fill: white; -fx-font-size: 28px; -fx-font-weight: bold;" />
                             <Label text="Students" style="-fx-text-fill: white; -fx-font-size: 14px;" />
                         </VBox>
 
                         <!-- Courses Card -->
                         <VBox style="-fx-background-color: #2ecc71; -fx-background-radius: 8; -fx-padding: 20; -fx-pref-width: 200;"
                               spacing="10.0">
-                            <Label text="15" style="-fx-text-fill: white; -fx-font-size: 28px; -fx-font-weight: bold;" />
+                            <Label fx:id="lblCourseCount" text="0" style="-fx-text-fill: white; -fx-font-size: 28px; -fx-font-weight: bold;" />
                             <Label text="Courses" style="-fx-text-fill: white; -fx-font-size: 14px;" />
                         </VBox>
 
                         <!-- Instructors Card -->
                         <VBox style="-fx-background-color: #e74c3c; -fx-background-radius: 8; -fx-padding: 20; -fx-pref-width: 200;"
                               spacing="10.0">
-                            <Label text="8" style="-fx-text-fill: white; -fx-font-size: 28px; -fx-font-weight: bold;" />
+                            <Label fx:id="lblInstructorCount" text="0" style="-fx-text-fill: white; -fx-font-size: 28px; -fx-font-weight: bold;" />
                             <Label text="Instructors" style="-fx-text-fill: white; -fx-font-size: 14px;" />
                         </VBox>
                     </children>

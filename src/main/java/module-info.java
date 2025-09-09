@@ -1,21 +1,23 @@
-module edu.lk.ijse {
+module Elite.Driving.School {
     requires javafx.controls;
     requires javafx.fxml;
     requires static lombok;
-    requires net.sf.jasperreports.core;
-    requires java.mail;
 
     requires org.hibernate.orm.core;
     requires jakarta.persistence;
-    requires java.naming;
+    requires org.mindrot.jbcrypt;
 
-    opens edu.lk.ijse.config to jakarta.persistence;
-    opens edu.lk.ijse.entity to org.hibernate.orm.core;
+    // Open packages to Hibernate
+    opens edu.icet.elite.entity to org.hibernate.orm.core;
 
-    opens edu.lk.ijse.controller to javafx.fxml;
-    opens edu.lk.ijse.dto.tm to javafx.base;
+    // Open packages to JavaFX
+    opens edu.icet.elite.controller to javafx.fxml;
+    opens edu.icet.elite.dto to javafx.base; // For TableView
 
-    exports edu.lk.ijse.config;
-    // මේ line එක add කරන්න
-    exports edu.lk.ijse;
+    exports edu.icet.elite;
+    exports edu.icet.elite.controller;
+    exports edu.icet.elite.dto;
+    exports edu.icet.elite.bo;
+    exports edu.icet.elite.db;
+    exports edu.icet.elite.exception;
 }
