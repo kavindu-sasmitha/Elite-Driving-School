@@ -5,7 +5,8 @@ module Elite.Driving.School {
 
     requires org.hibernate.orm.core;
     requires jakarta.persistence;
-    requires org.mindrot.jbcrypt;
+    requires java.naming;
+    requires jbcrypt;
 
     // Open packages to Hibernate
     opens edu.icet.elite.entity to org.hibernate.orm.core;
